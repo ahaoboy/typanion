@@ -311,8 +311,8 @@ export function isHexColor({
   return makeValidator<string>({
     test: (value, state) => {
       const res = alpha
-        ? colorStringRegExp.test(value)
-        : colorStringAlphaRegExp.test(value);
+        ? colorStringAlphaRegExp.test(value)
+        : colorStringRegExp.test(value);
 
       if (!res)
         return pushError(state, `Expected to be a valid hexadecimal color string (got ${getPrintable(value)})`);
